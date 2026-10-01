@@ -1,0 +1,34 @@
+#include <iostream>
+#include <vector>
+#include <cmath>
+using namespace std;
+
+// 1. Linear Regression
+void lr() {
+    double x[] = {1, 2, 3, 4, 5}, y[] = {2, 4, 6, 8, 10};
+    double m = 2, c = 0; // calculated slope & intercept
+    double in = 6;
+    cout << "LR Prediction for 6: " << m * in + c << endl;
+}
+
+// 2. KNN Classifier
+void knn() {
+    double p1[] = {1, 2}, p2[] = {5, 5}, q[] = {2, 2};
+    double d1 = hypot(q[0] - p1[0], q[1] - p1[1]);
+    double d2 = hypot(q[0] - p2[0], q[1] - p2[1]);
+    cout << "KNN Class: " << (d1 < d2 ? 0 : 1) << endl;
+}
+
+// 3. Perceptron
+void perceptron() {
+    double x[] = {1.0, 0.5}, w[] = {0.4, -0.6}, b = 0.1;
+    double sum = b + x[0] * w[0] + x[1] * w[1];
+    cout << "Perceptron: " << (sum >= 0 ? 1 : 0) << endl;
+}
+
+int main() {
+    lr();
+    knn();
+    perceptron();
+    return 0;
+}
